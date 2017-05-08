@@ -1,0 +1,763 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Language" content="zh-cn" />
+    <meta name="keywords" content="音乐,QQ音乐,在线听歌,音乐下载,音乐播放器,音乐网站,MV,巅峰榜,音乐排行榜,翻译歌曲,热门歌曲,经典老歌"/>
+    <meta name="description" content="QQ音乐是腾讯公司推出的一款免费音乐服务，海量音乐在线试听、最流行音乐在线首发、歌词翻译、手机铃声下载、高品质音乐试听、正版音乐下载、免费空间背景音乐设置、MV观看等，是互联网音乐播放和下载的首选" />
+    <meta name="mobile-agent" content="format==[html5];url=//m.y.qq.com">
+    <meta name="applicable-device" content="pc">
+    <meta name="baidu-site-verification" content="kkpzPh12FZ" />
+    <title>QQ音乐 - 中国最新最全免费正版高品质音乐平台！</title>
+    <link rel="canonical" href="//y.qq.com/" />
+<script type="text/javascript">
+    var _speedMark = new Date();
+</script>
+          
+<script id="mod_spt">
+if(window.location.protocol!='https:')window.location.replace(window.location.href.replace('http://', 'https://'));
+if (/iPhone|Android/i.test(navigator.userAgent) && !/type=(singer|album|song)&m?id/i.test(location.hash) && !/type=(topic|toplist|taoge|mymusic)/i.test(location.hash) && !/nomobile=1/.test(location.search)) {
+	location.href='//m.y.qq.com/';
+}
+
+function getParameterNew(url, name) {
+    var r = new RegExp("(\\?|#|&)" + name + "=([^&#\\?]*)(&|#|$|\\?)");
+    var m = url.match(r);
+    if ((!m || m == "")){
+        m = window.location.href.match(r);
+	}
+    return (!m ? "" : m[2]);
+};
+var myUrl = window.location.href;
+
+var chnUrl = decodeURIComponent( getParameterNew(myUrl, 'url')||'' ),
+	flag = unescape(getParameterNew(myUrl, 'f')),
+	type = unescape(getParameterNew(myUrl, "type")),
+	id = parseInt(getParameterNew(myUrl, "id")||'0', 10),
+	mid = (getParameterNew(myUrl, "mid")),
+	mids = (getParameterNew(myUrl, "mids")),
+	tab = getParameterNew(myUrl, "tab")||'',
+	page = decodeURIComponent(getParameterNew(myUrl, "p")||''),
+	diruin = getParameterNew(myUrl, "uin")||0,
+	dirid = getParameterNew(myUrl, "dirid")||0,
+	pgv_ref = getParameterNew(myUrl, "pgv_ref")||'',
+	msgid = getParameterNew(myUrl, "msgid")||0,
+	adtag = getParameterNew(myUrl, "ADTAG")||'',
+	downm = parseInt(getParameterNew(myUrl, "m"),10),
+	songtype = getParameterNew(myUrl, "songtype")||0,
+	shareuin = getParameterNew(myUrl, "shareuin")||0,
+	disstid = getParameterNew(myUrl, "disstid")||0,
+	no_redirect = parseInt(getParameterNew(myUrl, 'no_redirect'))||0,
+	play = parseInt(getParameterNew(myUrl, "play") || 0,10);
+	if(type=='song'&&songtype>0){
+	id = getParameterNew(myUrl, "id")||'0';
+	}
+	var mmid = mid.match(/[0-9a-zA-Z]*/);
+	if (mmid.length>0)
+	{
+		mid = mmid[0];
+	}else mid = '';
+	
+var goPhonePage = false;
+	// 跳转到手机页面
+	(function(){
+		if(navigator.userAgent.match(/Android|iPhone|iPod/i)&&!no_redirect){ // 手机侧
+			switch(type){
+				case 'album' : 
+					if(id){
+						window.location.replace('//y.qq.com/w/album.html?ADTAG=newyqq.index.album&albumid='+id);
+						goPhonePage = true;
+					}else
+					if(mid){
+						window.location.replace('//y.qq.com/w/album.html?ADTAG=newyqq.index.album&albummid='+mid);
+						goPhonePage = true;
+					}
+					break;
+				case 'singer' : 
+					if(id){
+						window.location.replace('//y.qq.com/w/singer.html?ADTAG=newyqq.index.singer&singerid='+id);
+						goPhonePage = true;
+					}else
+					if(mid){
+						window.location.replace('//y.qq.com/w/singer.html?ADTAG=newyqq.index.singer&singermid='+mid);
+						goPhonePage = true;
+					}
+					break;
+				case 'song' : 
+					if(id){
+						window.location.replace('//i.y.qq.com/v8/playsong.html?ADTAG=newyqq.index.song&songid='+id+(!!songtype? ('&songtype='+songtype) : '')+(!!shareuin? ('&shareuin='+shareuin) : '')+(!!disstid? ('&disstid='+disstid) : ''));
+						goPhonePage = true;
+					}else
+					if(mid){
+						window.location.replace('//i.y.qq.com/v8/playsong.html?ADTAG=newyqq.index.song&songmid='+mid+(!!songtype? ('&songtype='+songtype) : '')+(!!shareuin? ('&shareuin='+shareuin) : '')+(!!disstid? ('&disstid='+disstid) : ''));
+						goPhonePage = true;
+					}
+					break;
+				case 'topic' : 
+					if(id){
+						window.location.replace('//y.qq.com/w/topic.html?ADTAG=newyqq.index.topic&id='+id);
+						goPhonePage = true;
+					}
+					break;
+				case 'taoge' : 
+					if(id){
+						window.location.replace('//y.qq.com/w/taoge.html?ADTAG=newyqq.index.taoge&id='+id);
+						goPhonePage = true;
+					}
+					break;
+				case 'toplist' : 
+					if( /_/ig.test(page)  ){
+						var tempType = page.split('_')[0], tempId = parseInt(page.split('_')[1]);
+						if(tempId){
+							if(tempType == 'top'){
+								window.location.replace('//y.qq.com/w/toplist.html?ADTAG=newyqq.index.toplist&id='+tempId+'&type=0');
+								goPhonePage = true;
+							}else if(tempType=='global'){
+								window.location.replace('//y.qq.com/w/toplist.html?ADTAG=newyqq.index.toplist&id='+tempId+'&type=1');
+								goPhonePage = true;
+							}
+						}else{
+							window.location.replace('//y.qq.com/w/toplist.html?ADTAG=newyqq.index.toplist&id=2&type=0');
+							goPhonePage = true;
+						}
+					}
+					break;
+				case 'mymusic' : 
+					var tuin = getParameterNew(page, 'uin'),
+						tdirid = getParameterNew(page, 'dirid');
+					if(tuin && tdirid){
+						var g_BCDCode ={
+							Str2Hex : function(s){
+								var ss = encodeURIComponent(s);
+								var hex = '';
+								
+								for(var i=0, len=ss.length; i<len; ){
+									var c = ss.charAt(i), tc = '';
+									if(c==="%"){
+										tc = ss.substring(i,i+3);
+										i = i+3;
+									}else{
+										tc = ss.charCodeAt(i);
+										tc = "%"+tc.toString(16);
+										i++;
+									}
+									hex = hex + tc;
+								}
+								return (hex.replace(/%/g,"")).toUpperCase();
+							}
+						};
+						tuin = g_BCDCode.Str2Hex(tuin);
+						
+						window.location.replace('//y.qq.com/w/myalbum.html?ADTAG=newyqq.index.mymusic&bu='+tuin+'&dirid='+tdirid);
+						goPhonePage = true;
+					}else{
+						window.location.replace('//m.y.qq.com?ADTAG=newyqq.index.mymusic');
+						goPhonePage = true;
+					}
+					break;
+				case 'soso':
+					var kw = decodeURIComponent(getParameterNew(page, 'w'));
+					window.location.replace('//m.y.qq.com/#search/' + (kw? kw : ''));
+					goPhonePage = true;
+					break;
+			}
+		}
+	})();
+	function isURL(s){
+	var _isURL =  /^(?:ht|f)tp(?:s)?\:\/\/(?:[\w\-\.]+)\.\w+/i;
+	return _isURL.test(s);
+}
+	
+function _go() {
+	var url = '';
+	
+	if (type == "album") {
+		if (mid!=''&&typeof(mid)!='undefined'&&(mid)!='undefined') {
+			url = window.location.protocol+"//y.qq.com/n/yqq/album/"+mid+".html"+(!!adtag? ('?ADTAG='+adtag) : '');
+		}else if (id > 0) {
+			url = window.location.protocol+"//y.qq.com/n/yqq/album/"+id+"_num.html"+(!!adtag? ('?ADTAG='+adtag) : '');
+		}
+	} else if (type == "toplist"){
+		if (!!page && !/top_index/.test(page)){
+			page = page.replace(/\.html/g,'');
+			url = window.location.protocol+"//y.qq.com/n/yqq/toplist/"+page.split('_')[1]+".html"+(!!adtag? ('?ADTAG='+adtag) : '');
+		} else {
+			url = window.location.protocol+"//y.qq.com/n/yqq/toplist/4.html"+(!!adtag? ('?ADTAG='+adtag) : '');
+		}
+	} else if (type == "singer") {
+		if (mid!=''&&typeof(mid)!='undefined'&&(mid)!='undefined') {
+			url = window.location.protocol+'//y.qq.com/n/yqq/singer/'+mid+'.html'+(!!adtag? ('?ADTAG='+adtag) : '');
+		}else if (id > 0) {
+			url = window.location.protocol+'//y.qq.com/n/yqq/singer/'+id+'_num.html'+(!!adtag? ('?ADTAG='+adtag) : '');
+		} else {
+			url = window.location.protocol+"//y.qq.com/portal/singer_list.html"+(!!adtag? ('?ADTAG='+adtag) : '');
+		}
+		
+	} else if (type == "song" && (parseInt(id, 10) > 0||mid!='')) {
+		id = getParameterNew(myUrl, "id")||'' , songtype = parseInt(songtype, 10), disstid = parseInt(disstid, 10);
+		if (mid!=''&&typeof(mid)!='undefined'&&(mid)!='undefined') {
+			url = window.location.protocol+"//y.qq.com/n/yqq/song/"+mid+".html"+(!!adtag? ('?ADTAG='+adtag) : '');
+			if (!!disstid&&!!songtype&&!!id)
+			{
+				url = window.location.protocol+"//y.qq.com/n/yqq/song3/"+songtype+"/"+disstid+"/"+id+".html"+(!!adtag? ('?ADTAG='+adtag) : '')
+			}else 
+			if (!!songtype&&!!id)
+			{
+				url = window.location.protocol+"//y.qq.com/n/yqq/song2/"+songtype+"/"+id+".html"+(!!adtag? ('?ADTAG='+adtag) : '')
+			}
+		} else {
+			if (!!id)
+			{
+				url = window.location.protocol+"//y.qq.com/n/yqq/song/"+id+"_num.html"+(!!adtag? ('?ADTAG='+adtag) : '');
+				if (!!disstid&&!!songtype)
+				{
+					url = window.location.protocol+"//y.qq.com/n/yqq/song3/"+songtype+"/"+disstid+"/"+id+".html"+(!!adtag? ('?ADTAG='+adtag) : '')
+				}else 
+				if (!!songtype)
+				{
+					url = window.location.protocol+"//y.qq.com/n/yqq/song2/"+songtype+"/"+id+".html"+(!!adtag? ('?ADTAG='+adtag) : '')
+				}
+			}
+		}
+	} else if (type == "mymusic") {
+		if (!!page&&(page == 'songlist_import.html'||page == 'list_recover.html')){
+			url = window.location.protocol+"//y.qq.com/portal/"+page+"?tab="+tab;
+			if (!!tab)
+			{
+				url = window.location.protocol+"//y.qq.com/portal/"+page+"?tab="+tab;
+			}
+		} else {
+			if (!!page&&(page == 'mymusic_albumlist.html'))
+			{
+			url = window.location.protocol+"//y.qq.com/portal/profile.html#sub=other&tab=create&"+(!!adtag? ('&ADTAG='+adtag) : '');
+			}else
+			url = window.location.protocol+"//y.qq.com/portal/profile.html"+(!!adtag? ('?ADTAG='+adtag) : '');
+		}
+	} else if (type == "down") {
+		{
+			url = "//y.qq.com/download/index.html"+(!!adtag? ('?ADTAG='+adtag) : '');
+		}
+		window.location.replace(url);
+		return false;
+	}else if (type == "soso"){
+		if (!!page){
+			url = window.location.protocol+"//y.qq.com/portal/search.html"+page;
+		}else
+		url = window.location.protocol+"//y.qq.com/portal/search.html"+(!!adtag? ('?ADTAG='+adtag) : '');
+	}else if (type == "qplay") {
+		if (!!page) {
+			url = "http://y.qq.com/y/static/qplay/" + page;
+		} else {
+			url = "http://y.qq.com/y/static/qplay/qplay_coop.html";
+		}
+	}else if (type == "taoge") {
+		if (id > 0){
+			url = window.location.protocol+"//y.qq.com/n/yqq/playlist/"+id+".html"+(!!adtag? ('?ADTAG='+adtag) : '');
+		} 
+		
+	} else if (type == "radio") {
+		url = "";
+	} else if (type == "car") {
+		url = "http://y.qq.com/y/static/down/car_introduce.html"+(!!adtag? ('?ADTAG='+adtag) : '')
+	}
+	
+	
+	if(!isURL(url)){
+		url = '';
+	}
+	if (!!url) {
+		if (!!adtag&&url.indexOf('ADTAG')==-1){
+			if (url.indexOf('?')==-1){url = url+"?ADTAG=" + adtag; }else{url = url+"&ADTAG=" + adtag;}
+		}
+		if (!!play){
+			if (url.indexOf('?')==-1){url = url+"?play=" + play; }else{url = url+"&play=" + play;}
+		}
+		if (!!mids){
+			if (url.indexOf('?')==-1){url = url+"?mids=" + mids; }else{url = url+"&mids=" + mids;}
+		}
+		
+		url += (!!no_redirect? ((url.indexOf("?")==-1?'?':'&')+('no_redirect='+no_redirect)) : '');
+		window.location.href=url;
+	}
+
+}
+	if (!goPhonePage)
+	{
+		_go();
+	}
+(function(m, o, d, u, l, a, r) {
+	if(m[o]) {return;}  
+	function f(n) { 
+		return function() { r.push(n, arguments); return a; }
+	}  
+	m[o] = a = { 
+		args: (r = []),	resourceMap : f(0),	async: f(1)
+	};
+	u = d.createElement("script");  
+	u.id = o + "node"; 
+	u.async = true;  
+	u.src = "//y.gtimg.cn/c/=/music/portal/js/common/map.js,/music/portal/js/common/music/mod.js?r=" + parseInt(new Date()/600000) ;  
+	l = d.getElementsByTagName("head")[0];  
+	l.appendChild(u);
+})(window, "require", document); 
+window.SPD={_timing:{},_start:(new Date()),mark:function(a,b){this._timing[a]=(b||new Date())-this._start}};
+</script>
+    <link rel="stylesheet" href="//y.gtimg.cn/mediastyle/yqq/layout0323.css?max_age=25920000" />
+    <link rel="stylesheet" href="//y.gtimg.cn/mediastyle/yqq/index.css?max_age=25920000" />
+<script type="text/javascript">SPD.mark(31); // CSS加载完毕</script> 
+</head>
+
+<body>
+   <!-- 头部 S -->
+
+<script>
+if(window.ActiveXObject || window.msIsStaticHTML){
+	var ie = 6;
+
+	if(!!window.XMLHttpRequest) {ie = 7}; 
+	if(navigator.userAgent.indexOf("MSIE 7.0")!=-1) {ie = 7}; 
+	if(navigator.userAgent.indexOf("Trident/4.0")!=-1){ie = 8}; 
+	if(navigator.userAgent.indexOf("Trident/5.0") != -1){ie = 9};
+	if(navigator.userAgent.indexOf("Trident/6.0") != -1){ie = 10};
+	if(navigator.userAgent.indexOf("Trident/7.0") != -1 || "undefined" == typeof attachEvent){ie = 11};
+	if (ie < 8) {
+		document.write("<div class=\"popup_top\"  id=\"zoom_warn\">使用更高版本的 <a href=\"http://www.google.cn/intl/zh-CN/chrome/browser/desktop/\" target=\"_blank\">Chrome</a> 或 <a href=\"https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads\" target=\"_blank\">Internet Explorer</a>，体验更精彩</div>");
+	}
+}</script>
+<div class="mod_header">
+    <div class="section_inner">
+        <h1 class="qqmusic_title"><a href="//y.qq.com"><img srcset="//y.gtimg.cn/mediastyle/yqq/img/logo@2x.png 2x" src="//y.gtimg.cn/mediastyle/yqq/img/logo.png" alt="QQ音乐" class="qqmusic_logo"/></a></h1>
+        <!-- 导航 S -->
+        <ul class="mod_top_nav" role="nav">
+            <li class="top_nav__item top_nav__item--room">
+                <a href="//y.qq.com" class="top_nav__link top_nav__link--current" title="音乐馆">音乐馆<i class="top_nav__txt"></i></a>
+            </li>
+            <li class="top_nav__item top_nav__item--mine">
+                <a href="/portal/profile.html" class="top_nav__link" title="我的音乐">我的音乐<i class="top_nav__txt"></i></a>
+            </li>
+            <li class="top_nav__item top_nav__item--down">
+                <a href="//y.qq.com/download/index.html" class="top_nav__link" title="下载客户端" target="_blank">下载客户端<i class="top_nav__txt"></i></a>
+            </li>
+	    <li class="top_nav__item top_nav__item--vip">
+	        <a href="//y.qq.com/vipportal/" class="top_nav__link" title="VIP" target="_blank">VIP<i class="top_nav__txt"></i></a>
+	    </li>
+        </ul>
+	    <ul class="mod_top_subnav" style="display:;">
+		<li class="top_subnav__item">
+		    <a href="//y.qq.com" class="top_subnav__link">首页</a>
+		</li>
+		<li class="top_subnav__item">
+		    <a href="/portal/singer_list.html" class="top_subnav__link">歌手</a>
+		</li>
+		<li class="top_subnav__item">
+		    <a href="/portal/album_lib.html" class="top_subnav__link">专辑</a>
+		</li>
+		<li class="top_subnav__item">
+		    <a href="/n/yqq/toplist/4.html" class="top_subnav__link">排行榜</a>
+		</li>
+		<li class="top_subnav__item">
+		    <a href="/portal/playlist.html" class="top_subnav__link">分类歌单</a>
+		</li>
+		<li class="top_subnav__item">
+		    <a href="/portal/mv_lib.html#t6=2" class="top_subnav__link">MV</a>
+		</li>
+	    </ul>
+        <!-- 导航 E -->
+                <div class="mod_top_search" role="search">
+                    <div class="mod_search_input">
+                        <input class="search_input__input" aria-label="请输入搜索内容" type="text" placeholder="" accesskey="s"/>
+                        <button class="search_input__btn"><i class="icon_search"></i><span class="icon_txt">搜索</span></button>
+                    </div>
+                </div>
+        <div class="header__opt">
+
+               
+                <!-- 未登录 -->
+                <span class="mod_top_login">
+		    <a class="top_login__link js_logined" href="//y.qq.com/portal/profile.html#stat=y_new.top.user_pic" style="display:none;">
+                        <img src="//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000" class="top_login__cover" alt="" />
+                    </a>
+                    <a class="top_login__link js_login" data-stat="y_new.top.login" href="javascript:;">
+                        登录
+                    </a>
+
+                    <a class="login__link header__link js_login" data-stat="y_new.top.login" href="javascript:;">登录</a>
+                    <a class="mod_btn_green top_login__btn_vip js_openvip" data-aid="music.pc.20316.newyqqtop" data-stat="music.20316.btnclick.pc" href="javascript:;">开通绿钻豪华版</a>
+		    <a class="mod_btn top_login__btn_vip js_openmusic" data-aid="music.pc.20317.newyqqtop" data-stat="music.20317.btnclick.pc" href="javascript:;">开通付费包</a>
+                </span>
+		<!-- 用户信息 -->
+		    <div class="popup_user">
+		    </div>
+            </div>
+        </div>
+    </div>
+    <!-- 头部 E -->
+
+
+
+    <!-- 新碟首发 -->
+    <div class="mod_index mod_index--new mod_slide_box" id="albumlist_box" >
+        <div class="section_inner">
+            <div class="index__hd">
+                <h2 class="index__tit"><i class="index__tit_sprite"></i><i class="icon_txt">新碟首发</i></h2>
+                <i class="index__line index__line--left"></i>
+                <i class="index__line index__line--right"></i>
+            </div>
+	    <a href="//y.qq.com/portal/album_lib.html#stat=y_new.index.album.more" class="index__more index__more--white js_album_more">全部<i class="icon_index_arrow"></i></a>
+            <!-- 切换 -->
+            <div class="mod_index_tab">
+                <a href="//y.qq.com/portal/album_lib.html#stat=y_new.index.album.all" class="index_tab__item js_tab index_tab__item--current" data-type="nd" data-stat="y_new.index.album.nd">内地</a>
+                <a href="//y.qq.com/portal/album_lib.html#stat=y_new.index.album.all&t2=0" class="index_tab__item js_tab" data-type="gt" data-stat="y_new.index.album.gt">港台</a>
+                <a href="//y.qq.com/portal/album_lib.html#stat=y_new.index.album.all&t2=5" class="index_tab__item js_tab" data-type="eu" data-stat="y_new.index.album.eu">欧美</a>
+                <a href="//y.qq.com/portal/album_lib.html#stat=y_new.index.album.all&t2=4" class="index_tab__item js_tab" data-type="k" data-stat="y_new.index.album.k">韩国</a>
+                <a href="//y.qq.com/portal/album_lib.html#stat=y_new.index.album.all&t2=3" class="index_tab__item js_tab" data-type="j" data-stat="y_new.index.album.j">日本</a>
+            </div>
+            <div class="mod_playlist mod_slide">
+                <!-- 偶数加 playlist__item--even -->
+                <ul class="playlist__list slide__list" id="albumlist">
+		
+                    <li class="playlist__item slide__item " onmouseover="this.className=(this.className+' playlist__item--hover')" onmouseout="this.className=this.className.replace(/ playlist__item--hover/, '')" data-albummid="002YEHQA2OkGBI" data-albumid="2045529">
+                        <div class="playlist__item_box">
+                            <div class="playlist__cover mod_cover"><a href="//y.qq.com/n/yqq/album/002YEHQA2OkGBI.html" class="js_album" data-albummid="002YEHQA2OkGBI" data-albumid="2045529"><img src="//y.gtimg.cn/music/photo_new/T002R300x300M000002YEHQA2OkGBI.jpg?max_age=2592000" alt="在吗？" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/album_300.png?max_age=31536000';this.onerror=null;" class="playlist__pic"><i class="mod_cover__mask"></i><i class="mod_cover__icon_play js_play"></i></a></div>
+                            <h4 class="playlist__title">
+				    <span class="playlist__title_txt"><a href="//y.qq.com/n/yqq/album/002YEHQA2OkGBI.html" class="js_album" data-albummid="002YEHQA2OkGBI" data-albumid="2045529">在吗？</a></span>
+				    <a href="javascript:;" class="btn_operate_menu js_albumlist_more" data-type="2" data-mid="002YEHQA2OkGBI"><span class="icon_txt">更多</span></a>
+			    </h4>
+                            
+                            <div class="playlist__author">
+                                    <a href="//y.qq.com/n/yqq/singer/002ZOuVm3Qn20Y.html" class="js_singer" data-singermid="4615" title="李宇春">李宇春</a>
+                                </div>
+                        </div>
+                    </li>
+		    
+                    <li class="playlist__item slide__item  playlist__item--even " onmouseover="this.className=(this.className+' playlist__item--hover')" onmouseout="this.className=this.className.replace(/ playlist__item--hover/, '')" data-albummid="002Dh1cM1AfQCY" data-albumid="2045107">
+                        <div class="playlist__item_box">
+                            <div class="playlist__cover mod_cover"><a href="//y.qq.com/n/yqq/album/002Dh1cM1AfQCY.html" class="js_album" data-albummid="002Dh1cM1AfQCY" data-albumid="2045107"><img src="//y.gtimg.cn/music/photo_new/T002R300x300M000002Dh1cM1AfQCY.jpg?max_age=2592000" alt="梦想家（央视五四晚会版）" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/album_300.png?max_age=31536000';this.onerror=null;" class="playlist__pic"><i class="mod_cover__mask"></i><i class="mod_cover__icon_play js_play"></i></a></div>
+                            <h4 class="playlist__title">
+				    <span class="playlist__title_txt"><a href="//y.qq.com/n/yqq/album/002Dh1cM1AfQCY.html" class="js_album" data-albummid="002Dh1cM1AfQCY" data-albumid="2045107">梦想家（央视五四晚会版）</a></span>
+				    <a href="javascript:;" class="btn_operate_menu js_albumlist_more" data-type="2" data-mid="002Dh1cM1AfQCY"><span class="icon_txt">更多</span></a>
+			    </h4>
+                            
+                            <div class="playlist__author">
+                                    <a href="//y.qq.com/n/yqq/singer/003BLxYj1Smxh4.html" class="js_singer" data-singermid="92117" title="SNH48">SNH48</a>
+                                </div>
+                        </div>
+                    </li>
+		    
+                    <li class="playlist__item slide__item " onmouseover="this.className=(this.className+' playlist__item--hover')" onmouseout="this.className=this.className.replace(/ playlist__item--hover/, '')" data-albummid="000aftGF29cEOp" data-albumid="2042813">
+                        <div class="playlist__item_box">
+                            <div class="playlist__cover mod_cover"><a href="//y.qq.com/n/yqq/album/000aftGF29cEOp.html" class="js_album" data-albummid="000aftGF29cEOp" data-albumid="2042813"><img src="//y.gtimg.cn/music/photo_new/T002R300x300M000000aftGF29cEOp.jpg?max_age=2592000" alt="弟兄" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/album_300.png?max_age=31536000';this.onerror=null;" class="playlist__pic"><i class="mod_cover__mask"></i><i class="mod_cover__icon_play js_play"></i></a></div>
+                            <h4 class="playlist__title">
+				    <span class="playlist__title_txt"><a href="//y.qq.com/n/yqq/album/000aftGF29cEOp.html" class="js_album" data-albummid="000aftGF29cEOp" data-albumid="2042813">弟兄</a></span>
+				    <a href="javascript:;" class="btn_operate_menu js_albumlist_more" data-type="2" data-mid="000aftGF29cEOp"><span class="icon_txt">更多</span></a>
+			    </h4>
+                            
+                            <div class="playlist__author">
+                                    <a href="//y.qq.com/n/yqq/singer/004DTQXp0cNXeG.html" class="js_singer" data-singermid="11453" title="魏晨">魏晨</a>
+                                </div>
+                        </div>
+                    </li>
+		    
+                    <li class="playlist__item slide__item  playlist__item--even " onmouseover="this.className=(this.className+' playlist__item--hover')" onmouseout="this.className=this.className.replace(/ playlist__item--hover/, '')" data-albummid="002J5MWG3SA9mA" data-albumid="1980115">
+                        <div class="playlist__item_box">
+                            <div class="playlist__cover mod_cover"><a href="//y.qq.com/n/yqq/album/002J5MWG3SA9mA.html" class="js_album" data-albummid="002J5MWG3SA9mA" data-albumid="1980115"><img src="//y.gtimg.cn/music/photo_new/T002R300x300M000002J5MWG3SA9mA.jpg?max_age=2592000" alt="从心出发" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/album_300.png?max_age=31536000';this.onerror=null;" class="playlist__pic"><i class="mod_cover__mask"></i><i class="mod_cover__icon_play js_play"></i></a></div>
+                            <h4 class="playlist__title">
+				    <span class="playlist__title_txt"><a href="//y.qq.com/n/yqq/album/002J5MWG3SA9mA.html" class="js_album" data-albummid="002J5MWG3SA9mA" data-albumid="1980115">从心出发</a></span>
+				    <a href="javascript:;" class="btn_operate_menu js_albumlist_more" data-type="2" data-mid="002J5MWG3SA9mA"><span class="icon_txt">更多</span></a>
+			    </h4>
+                            
+                            <div class="playlist__author">
+                                    <a href="//y.qq.com/n/yqq/singer/003Cn3Yh16q1MO.html" class="js_singer" data-singermid="89698" title="庄心妍">庄心妍</a>
+                                </div>
+                        </div>
+                    </li>
+		    
+                    <li class="playlist__item slide__item " onmouseover="this.className=(this.className+' playlist__item--hover')" onmouseout="this.className=this.className.replace(/ playlist__item--hover/, '')" data-albummid="001pCyYl3H9VjX" data-albumid="2045568">
+                        <div class="playlist__item_box">
+                            <div class="playlist__cover mod_cover"><a href="//y.qq.com/n/yqq/album/001pCyYl3H9VjX.html" class="js_album" data-albummid="001pCyYl3H9VjX" data-albumid="2045568"><img src="//y.gtimg.cn/music/photo_new/T002R300x300M000001pCyYl3H9VjX.jpg?max_age=2592000" alt="金曲捞 第4期" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/album_300.png?max_age=31536000';this.onerror=null;" class="playlist__pic"><i class="mod_cover__mask"></i><i class="mod_cover__icon_play js_play"></i></a></div>
+                            <h4 class="playlist__title">
+				    <span class="playlist__title_txt"><a href="//y.qq.com/n/yqq/album/001pCyYl3H9VjX.html" class="js_album" data-albummid="001pCyYl3H9VjX" data-albumid="2045568">金曲捞 第4期</a></span>
+				    <a href="javascript:;" class="btn_operate_menu js_albumlist_more" data-type="2" data-mid="001pCyYl3H9VjX"><span class="icon_txt">更多</span></a>
+			    </h4>
+                            
+                            <div class="playlist__author">
+                                    <a href="//y.qq.com/n/yqq/singer/004NuF1M2hJBsp.html" class="js_singer" data-singermid="1457068" title="金曲捞">金曲捞</a>
+                                </div>
+                        </div>
+                    </li>
+		    
+                    <li class="playlist__item slide__item  playlist__item--even " onmouseover="this.className=(this.className+' playlist__item--hover')" onmouseout="this.className=this.className.replace(/ playlist__item--hover/, '')" data-albummid="0008Mn5h3DggJW" data-albumid="2042172">
+                        <div class="playlist__item_box">
+                            <div class="playlist__cover mod_cover"><a href="//y.qq.com/n/yqq/album/0008Mn5h3DggJW.html" class="js_album" data-albummid="0008Mn5h3DggJW" data-albumid="2042172"><img src="//y.gtimg.cn/music/photo_new/T002R300x300M0000008Mn5h3DggJW.jpg?max_age=2592000" alt="义" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/album_300.png?max_age=31536000';this.onerror=null;" class="playlist__pic"><i class="mod_cover__mask"></i><i class="mod_cover__icon_play js_play"></i></a></div>
+                            <h4 class="playlist__title">
+				    <span class="playlist__title_txt"><a href="//y.qq.com/n/yqq/album/0008Mn5h3DggJW.html" class="js_album" data-albummid="0008Mn5h3DggJW" data-albumid="2042172">义</a></span>
+				    <a href="javascript:;" class="btn_operate_menu js_albumlist_more" data-type="2" data-mid="0008Mn5h3DggJW"><span class="icon_txt">更多</span></a>
+			    </h4>
+                            
+                            <div class="playlist__author">
+                                    <a href="//y.qq.com/n/yqq/singer/003Mpbxb4QcwDI.html" class="js_singer" data-singermid="31520" title="李炜">李炜</a>
+                                </div>
+                        </div>
+                    </li>
+		    
+                    <li class="playlist__item slide__item " onmouseover="this.className=(this.className+' playlist__item--hover')" onmouseout="this.className=this.className.replace(/ playlist__item--hover/, '')" data-albummid="002Q6jLt1XfwHP" data-albumid="2044097">
+                        <div class="playlist__item_box">
+                            <div class="playlist__cover mod_cover"><a href="//y.qq.com/n/yqq/album/002Q6jLt1XfwHP.html" class="js_album" data-albummid="002Q6jLt1XfwHP" data-albumid="2044097"><img src="//y.gtimg.cn/music/photo_new/T002R300x300M000002Q6jLt1XfwHP.jpg?max_age=2592000" alt="天问" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/album_300.png?max_age=31536000';this.onerror=null;" class="playlist__pic"><i class="mod_cover__mask"></i><i class="mod_cover__icon_play js_play"></i></a></div>
+                            <h4 class="playlist__title">
+				    <span class="playlist__title_txt"><a href="//y.qq.com/n/yqq/album/002Q6jLt1XfwHP.html" class="js_album" data-albummid="002Q6jLt1XfwHP" data-albumid="2044097">天问</a></span>
+				    <a href="javascript:;" class="btn_operate_menu js_albumlist_more" data-type="2" data-mid="002Q6jLt1XfwHP"><span class="icon_txt">更多</span></a>
+			    </h4>
+                            
+                            <div class="playlist__author">
+                                    <a href="//y.qq.com/n/yqq/singer/003U6coz1AhN3H.html" class="js_singer" data-singermid="31035" title="简弘亦">简弘亦</a>
+                                </div>
+                        </div>
+                    </li>
+		    
+                    <li class="playlist__item slide__item  playlist__item--even " onmouseover="this.className=(this.className+' playlist__item--hover')" onmouseout="this.className=this.className.replace(/ playlist__item--hover/, '')" data-albummid="0032EblP0FOvUt" data-albumid="2044319">
+                        <div class="playlist__item_box">
+                            <div class="playlist__cover mod_cover"><a href="//y.qq.com/n/yqq/album/0032EblP0FOvUt.html" class="js_album" data-albummid="0032EblP0FOvUt" data-albumid="2044319"><img src="//y.gtimg.cn/music/photo_new/T002R300x300M0000032EblP0FOvUt.jpg?max_age=2592000" alt="Collateral Love" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/album_300.png?max_age=31536000';this.onerror=null;" class="playlist__pic"><i class="mod_cover__mask"></i><i class="mod_cover__icon_play js_play"></i></a></div>
+                            <h4 class="playlist__title">
+				    <span class="playlist__title_txt"><a href="//y.qq.com/n/yqq/album/0032EblP0FOvUt.html" class="js_album" data-albummid="0032EblP0FOvUt" data-albumid="2044319">Collateral Love</a></span>
+				    <a href="javascript:;" class="btn_operate_menu js_albumlist_more" data-type="2" data-mid="0032EblP0FOvUt"><span class="icon_txt">更多</span></a>
+			    </h4>
+                            
+                            <div class="playlist__author">
+                                    <a href="//y.qq.com/n/yqq/singer/003XriCI0OfGYj.html" class="js_singer" data-singermid="116322" title="黄子韬">黄子韬</a>
+                                </div>
+                        </div>
+                    </li>
+		    
+                    <li class="playlist__item slide__item " onmouseover="this.className=(this.className+' playlist__item--hover')" onmouseout="this.className=this.className.replace(/ playlist__item--hover/, '')" data-albummid="000bLEvX4ekWjF" data-albumid="2044033">
+                        <div class="playlist__item_box">
+                            <div class="playlist__cover mod_cover"><a href="//y.qq.com/n/yqq/album/000bLEvX4ekWjF.html" class="js_album" data-albummid="000bLEvX4ekWjF" data-albumid="2044033"><img src="//y.gtimg.cn/music/photo_new/T002R300x300M000000bLEvX4ekWjF.jpg?max_age=2592000" alt="后来呢" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/album_300.png?max_age=31536000';this.onerror=null;" class="playlist__pic"><i class="mod_cover__mask"></i><i class="mod_cover__icon_play js_play"></i></a></div>
+                            <h4 class="playlist__title">
+				    <span class="playlist__title_txt"><a href="//y.qq.com/n/yqq/album/000bLEvX4ekWjF.html" class="js_album" data-albummid="000bLEvX4ekWjF" data-albumid="2044033">后来呢</a></span>
+				    <a href="javascript:;" class="btn_operate_menu js_albumlist_more" data-type="2" data-mid="000bLEvX4ekWjF"><span class="icon_txt">更多</span></a>
+			    </h4>
+                            
+                            <div class="playlist__author">
+                                    <a href="//y.qq.com/n/yqq/singer/0010DrXn3I8Xp3.html" class="js_singer" data-singermid="156053" title="徐浩">徐浩</a>
+                                </div>
+                        </div>
+                    </li>
+		    
+                    <li class="playlist__item slide__item  playlist__item--even " onmouseover="this.className=(this.className+' playlist__item--hover')" onmouseout="this.className=this.className.replace(/ playlist__item--hover/, '')" data-albummid="002hmxOs4UuxDy" data-albumid="2042709">
+                        <div class="playlist__item_box">
+                            <div class="playlist__cover mod_cover"><a href="//y.qq.com/n/yqq/album/002hmxOs4UuxDy.html" class="js_album" data-albummid="002hmxOs4UuxDy" data-albumid="2042709"><img src="//y.gtimg.cn/music/photo_new/T002R300x300M000002hmxOs4UuxDy.jpg?max_age=2592000" alt="只会更寂寞" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/album_300.png?max_age=31536000';this.onerror=null;" class="playlist__pic"><i class="mod_cover__mask"></i><i class="mod_cover__icon_play js_play"></i></a></div>
+                            <h4 class="playlist__title">
+				    <span class="playlist__title_txt"><a href="//y.qq.com/n/yqq/album/002hmxOs4UuxDy.html" class="js_album" data-albummid="002hmxOs4UuxDy" data-albumid="2042709">只会更寂寞</a></span>
+				    <a href="javascript:;" class="btn_operate_menu js_albumlist_more" data-type="2" data-mid="002hmxOs4UuxDy"><span class="icon_txt">更多</span></a>
+			    </h4>
+                            
+                            <div class="playlist__author">
+                                    <a href="//y.qq.com/n/yqq/singer/003HLN6i1em7ll.html" class="js_singer" data-singermid="19626" title="潘辰">潘辰</a>
+                                </div>
+                        </div>
+                    </li>
+		    
+                    <li class="playlist__item slide__item " onmouseover="this.className=(this.className+' playlist__item--hover')" onmouseout="this.className=this.className.replace(/ playlist__item--hover/, '')" data-albummid="002Sh3EA1oER7u" data-albumid="2043176">
+                        <div class="playlist__item_box">
+                            <div class="playlist__cover mod_cover"><a href="//y.qq.com/n/yqq/album/002Sh3EA1oER7u.html" class="js_album" data-albummid="002Sh3EA1oER7u" data-albumid="2043176"><img src="//y.gtimg.cn/music/photo_new/T002R300x300M000002Sh3EA1oER7u.jpg?max_age=2592000" alt="孤单布娃娃" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/album_300.png?max_age=31536000';this.onerror=null;" class="playlist__pic"><i class="mod_cover__mask"></i><i class="mod_cover__icon_play js_play"></i></a></div>
+                            <h4 class="playlist__title">
+				    <span class="playlist__title_txt"><a href="//y.qq.com/n/yqq/album/002Sh3EA1oER7u.html" class="js_album" data-albummid="002Sh3EA1oER7u" data-albumid="2043176">孤单布娃娃</a></span>
+				    <a href="javascript:;" class="btn_operate_menu js_albumlist_more" data-type="2" data-mid="002Sh3EA1oER7u"><span class="icon_txt">更多</span></a>
+			    </h4>
+                            
+                            <div class="playlist__author">
+                                    <a href="//y.qq.com/n/yqq/singer/003nJVKy2lLFXf.html" class="js_singer" data-singermid="1107586" title="Sunshine">Sunshine</a>
+                                </div>
+                        </div>
+                    </li>
+		    
+                    <li class="playlist__item slide__item  playlist__item--even " onmouseover="this.className=(this.className+' playlist__item--hover')" onmouseout="this.className=this.className.replace(/ playlist__item--hover/, '')" data-albummid="000b1nbM0udiPI" data-albumid="2040738">
+                        <div class="playlist__item_box">
+                            <div class="playlist__cover mod_cover"><a href="//y.qq.com/n/yqq/album/000b1nbM0udiPI.html" class="js_album" data-albummid="000b1nbM0udiPI" data-albumid="2040738"><img src="//y.gtimg.cn/music/photo_new/T002R300x300M000000b1nbM0udiPI.jpg?max_age=2592000" alt="青春白皮书" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/album_300.png?max_age=31536000';this.onerror=null;" class="playlist__pic"><i class="mod_cover__mask"></i><i class="mod_cover__icon_play js_play"></i></a></div>
+                            <h4 class="playlist__title">
+				    <span class="playlist__title_txt"><a href="//y.qq.com/n/yqq/album/000b1nbM0udiPI.html" class="js_album" data-albummid="000b1nbM0udiPI" data-albumid="2040738">青春白皮书</a></span>
+				    <a href="javascript:;" class="btn_operate_menu js_albumlist_more" data-type="2" data-mid="000b1nbM0udiPI"><span class="icon_txt">更多</span></a>
+			    </h4>
+                            
+                            <div class="playlist__author">
+                                    <a href="//y.qq.com/n/yqq/singer/001z2JmX09LLgL.html" class="js_singer" data-singermid="3954" title="汪苏泷">汪苏泷</a>
+                                </div>
+                        </div>
+                    </li>
+		    
+                    <li class="playlist__item slide__item " onmouseover="this.className=(this.className+' playlist__item--hover')" onmouseout="this.className=this.className.replace(/ playlist__item--hover/, '')" data-albummid="002t8cgE35eykn" data-albumid="2040754">
+                        <div class="playlist__item_box">
+                            <div class="playlist__cover mod_cover"><a href="//y.qq.com/n/yqq/album/002t8cgE35eykn.html" class="js_album" data-albummid="002t8cgE35eykn" data-albumid="2040754"><img src="//y.gtimg.cn/music/photo_new/T002R300x300M000002t8cgE35eykn.jpg?max_age=2592000" alt="昨天涯——献给布宜诺斯艾利斯" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/album_300.png?max_age=31536000';this.onerror=null;" class="playlist__pic"><i class="mod_cover__mask"></i><i class="mod_cover__icon_play js_play"></i></a></div>
+                            <h4 class="playlist__title">
+				    <span class="playlist__title_txt"><a href="//y.qq.com/n/yqq/album/002t8cgE35eykn.html" class="js_album" data-albummid="002t8cgE35eykn" data-albumid="2040754">昨天涯——献给布宜诺斯艾利斯</a></span>
+				    <a href="javascript:;" class="btn_operate_menu js_albumlist_more" data-type="2" data-mid="002t8cgE35eykn"><span class="icon_txt">更多</span></a>
+			    </h4>
+                            
+                            <div class="playlist__author">
+                                    <a href="//y.qq.com/n/yqq/singer/000we89k1hzBcA.html" class="js_singer" data-singermid="5979" title="谭维维">谭维维</a>
+                                </div>
+                        </div>
+                    </li>
+		    
+                    <li class="playlist__item slide__item  playlist__item--even " onmouseover="this.className=(this.className+' playlist__item--hover')" onmouseout="this.className=this.className.replace(/ playlist__item--hover/, '')" data-albummid="001lCFb229S7PX" data-albumid="2041497">
+                        <div class="playlist__item_box">
+                            <div class="playlist__cover mod_cover"><a href="//y.qq.com/n/yqq/album/001lCFb229S7PX.html" class="js_album" data-albummid="001lCFb229S7PX" data-albumid="2041497"><img src="//y.gtimg.cn/music/photo_new/T002R300x300M000001lCFb229S7PX.jpg?max_age=2592000" alt="尖叫之夜" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/album_300.png?max_age=31536000';this.onerror=null;" class="playlist__pic"><i class="mod_cover__mask"></i><i class="mod_cover__icon_play js_play"></i></a></div>
+                            <h4 class="playlist__title">
+				    <span class="playlist__title_txt"><a href="//y.qq.com/n/yqq/album/001lCFb229S7PX.html" class="js_album" data-albummid="001lCFb229S7PX" data-albumid="2041497">尖叫之夜</a></span>
+				    <a href="javascript:;" class="btn_operate_menu js_albumlist_more" data-type="2" data-mid="001lCFb229S7PX"><span class="icon_txt">更多</span></a>
+			    </h4>
+                            
+                            <div class="playlist__author">
+                                    <a href="//y.qq.com/n/yqq/singer/002ykHF42AYnsl.html" class="js_singer" data-singermid="1113420" title="许魏洲">许魏洲</a>
+                                </div>
+                        </div>
+                    </li>
+		    
+                    <li class="playlist__item slide__item " onmouseover="this.className=(this.className+' playlist__item--hover')" onmouseout="this.className=this.className.replace(/ playlist__item--hover/, '')" data-albummid="003rBSNV26p7lk" data-albumid="2036868">
+                        <div class="playlist__item_box">
+                            <div class="playlist__cover mod_cover"><a href="//y.qq.com/n/yqq/album/003rBSNV26p7lk.html" class="js_album" data-albummid="003rBSNV26p7lk" data-albumid="2036868"><img src="//y.gtimg.cn/music/photo_new/T002R300x300M000003rBSNV26p7lk.jpg?max_age=2592000" alt="母亲的微笑" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/album_300.png?max_age=31536000';this.onerror=null;" class="playlist__pic"><i class="mod_cover__mask"></i><i class="mod_cover__icon_play js_play"></i></a></div>
+                            <h4 class="playlist__title">
+				    <span class="playlist__title_txt"><a href="//y.qq.com/n/yqq/album/003rBSNV26p7lk.html" class="js_album" data-albummid="003rBSNV26p7lk" data-albumid="2036868">母亲的微笑</a></span>
+				    <a href="javascript:;" class="btn_operate_menu js_albumlist_more" data-type="2" data-mid="003rBSNV26p7lk"><span class="icon_txt">更多</span></a>
+			    </h4>
+                            
+                            <div class="playlist__author">
+                                    <a href="//y.qq.com/n/yqq/singer/000lLCqt2TLQKU.html" class="js_singer" data-singermid="1059" title="何晟铭">何晟铭</a>
+                                </div>
+                        </div>
+                    </li>
+		    
+                    <li class="playlist__item slide__item  playlist__item--even " onmouseover="this.className=(this.className+' playlist__item--hover')" onmouseout="this.className=this.className.replace(/ playlist__item--hover/, '')" data-albummid="001Xgi710Hgd1y" data-albumid="2002403">
+                        <div class="playlist__item_box">
+                            <div class="playlist__cover mod_cover"><a href="//y.qq.com/n/yqq/album/001Xgi710Hgd1y.html" class="js_album" data-albummid="001Xgi710Hgd1y" data-albumid="2002403"><img src="//y.gtimg.cn/music/photo_new/T002R300x300M000001Xgi710Hgd1y.jpg?max_age=2592000" alt="寻" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/album_300.png?max_age=31536000';this.onerror=null;" class="playlist__pic"><i class="mod_cover__mask"></i><i class="mod_cover__icon_play js_play"></i></a></div>
+                            <h4 class="playlist__title">
+				    <span class="playlist__title_txt"><a href="//y.qq.com/n/yqq/album/001Xgi710Hgd1y.html" class="js_album" data-albummid="001Xgi710Hgd1y" data-albumid="2002403">寻</a></span>
+				    <a href="javascript:;" class="btn_operate_menu js_albumlist_more" data-type="2" data-mid="001Xgi710Hgd1y"><span class="icon_txt">更多</span></a>
+			    </h4>
+                            
+                            <div class="playlist__author">
+                                    <a href="//y.qq.com/n/yqq/singer/002Vcz8F2hpBQj.html" class="js_singer" data-singermid="163550" title="华晨宇">华晨宇</a>
+                                </div>
+                        </div>
+                    </li>
+		    
+                </ul>
+            </div>
+            <div class="mod_slide_switch js_switch" data-stat="y_new.index.album.pager">
+            </div>
+        </div>
+        <div class="mod_slide_action">
+            <div class="slide_action slide_action--left">
+                <a href="javascript:;" class="slide_action__btn slide_action__btn--left js_jump" data-p="prev" data-stat="y_new.index.album.pager" tabindex="-1"><i class="icon_txt">上一页</i><i class="slide_action__arrow slide_action__arrow--left"></i></a>
+            </div>
+            <div class="slide_action slide_action--right">
+                <a href="javascript:;" class="slide_action__btn slide_action__btn--right js_jump" data-p="next" data-stat="y_new.index.album.pager" tabindex="-1"><i class="icon_txt">下一页</i><i class="slide_action__arrow slide_action__arrow--right"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- 精彩推荐 -->
+    <div class="mod_index mod_index--event mod_slide_box" id="focus">
+        
+    </div>
+    <!-- 排行榜 -->
+    <div id="toplist_box"></div>
+    <!-- 热门歌单 -->
+    <div id="taogelist_box"></div>
+    <!-- 新碟首发 -->
+    <div class="mod_index mod_index--mv mod_slide_box" id="mvlist">
+    </div>
+
+    <div class="footer" role="footer">
+    <div class="section_inner">
+        <div class="footer_info">
+
+            <div class="footer_download">
+                <h3 class="footer_tit">下载QQ音乐客户端</h3>
+                <ul class="footer_download_list">
+                    <li class="footer_download_list__item"><a href="//y.qq.com/download/" class="js_footer_down" data-type="pc" data-stat="y_new.footer.download.pc"><i class="icon_qm_pc"><span class="icon_txt">QQ音乐</span></i>PC版</a></li>
+                    <li class="footer_download_list__item"><a href="//y.qq.com/download/" class="js_footer_down" data-type="mac" data-stat="y_new.footer.download.mac"><i class="icon_qm_mac"><span class="icon_txt">QQ音乐</span></i>Mac版</a></li>
+                    <li class="footer_download_list__item"><a href="//y.qq.com/download/" class="js_footer_down" data-type="andriod" data-stat="y_new.footer.download.andriod"><i class="icon_qm_android"><span class="icon_txt">QQ音乐</span></i>Android版</a></li>
+                    <li class="footer_download_list__item"><a href="//y.qq.com/download/" class="js_footer_down" data-type="iphone" data-stat="y_new.footer.download.iphone"><i class="icon_qm_iphone"><span class="icon_txt">QQ音乐</span></i>iPhone版</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_product">
+                <h3 class="footer_tit">特色产品</h3>
+                <ul class="footer_product_list">
+                    <li class="footer_product_list__item footer_product_list__item--pic"><a href="http://kg.qq.com/?pgv_ref=qqmusic.y.topmenu" target="_blank" class="js_other_link" data-stat="y_new.footer.other_music.k"><i class="icon_qm_kg"></i>全民K歌</a></li>
+                    <li class="footer_product_list__item footer_product_list__item--pic"><a href="http://y.qq.com/vip/voice_intro/index.html" target="_blank" class="js_other_link" data-stat="y_new.footer.other_music.supersound"><i class="icon_qm_ss"></i>Super Sound</a></li>
+                    <li class="footer_product_list__item footer_product_list__item--pic"><a href="http://y.qq.com/y/static/down/qplay.html?pgv_ref=qqmusic.y.topmenu" target="_blank" class="js_other_link" data-stat="y_new.footer.other_music.qplay"><i class="icon_qm_qp"></i>QPlay</a></li>
+                    <li class="footer_product_list__item"><a href="http://y.qq.com/cp/homepage.html#/home?from=yqq" target="_blank" class="js_other_link" data-stat="y_new.footer.other_music.cp">QQ音乐原创音乐平台</a></li>                   
+					<li class="footer_product_list__item"><a href="//y.qq.com/portal/mv/mv_upload.html" target="_blank" class="js_other_link" data-stat="y_new.footer.other_music.ugc">上传视频</a></li>
+                    <li class="footer_product_list__item"><a href="http://y.qq.com/y/static/down/car_introduce.html" target="_blank" class="js_other_link" data-stat="y_new.footer.other_music.car_play">车载互联</a></li>
+                    <li class="footer_product_list__item"><a href="http://y.qq.com/yanchu/?pgv_ref=qqmusic.y.topmenu" target="_blank" class="js_other_link" data-stat="y_new.footer.other_music.yanchu">QQ演出</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_link">
+                <h3 class="footer_tit">合作链接</h3>
+                <!-- 显示全部 footer_link_list--show -->
+                <ul class="footer_link_list">
+                    <li class="footer_link_list__item"><a href="//y.qq.com/portal/company_detail.html?id=297" target="_blank" class="js_other_link" data-stat="y_new.footer.other_link">CJ E&M</a></li>
+                    <li class="footer_link_list__item"><a href="http://v.qq.com/" target="_blank" class="js_other_link" data-stat="y_new.footer.other_link">腾讯视频</a></li>
+                    <li class="footer_link_list__item"><a href="http://z.qzone.com/" target="_blank" class="js_other_link" data-stat="y_new.footer.other_link">手机QQ空间</a></li>
+                    <li class="footer_link_list__item"><a href="http://im.qq.com/" target="_blank" class="js_other_link" data-stat="y_new.footer.other_link">最新版QQ</a></li>
+                    <li class="footer_link_list__item"><a href="http://e.qq.com/index.shtml" target="_blank" class="js_other_link" data-stat="y_new.footer.other_link">腾讯社交广告</a></li>
+                    <li class="footer_link_list__item"><a href="http://guanjia.qq.com/" target="_blank" class="js_other_link" data-stat="y_new.footer.other_link">电脑管家</a></li>
+                    <li class="footer_link_list__item"><a href="http://browser.qq.com/" target="_blank" class="js_other_link" data-stat="y_new.footer.other_link">QQ浏览器</a></li>
+                    <li class="footer_link_list__item"><a href="http://huabao.qzone.qq.com/" target="_blank" class="js_other_link" data-stat="y_new.footer.other_link">画报</a></li>
+                    <li class="footer_link_list__item"><a href="http://act.qzone.qq.com/" target="_blank" class="js_other_link" data-stat="y_new.footer.other_link">黄钻活动</a></li>
+                    <li class="footer_link_list__item"><a href="http://xing.qq.com/" target="_blank" class="js_other_link" data-stat="y_new.footer.other_link">星钻</a></li>
+                    <li class="footer_link_list__item"><a href="http://www.weiyun.com/" target="_blank" class="js_other_link" data-stat="y_new.footer.other_link">腾讯微云</a></li>
+                    <li class="footer_link_list__item js_last" style="display:none;"><a href="http://fm.qq.com/" target="_blank" class="js_other_link" data-stat="y_new.footer.other_link">企鹅FM</a></li>
+                    <li class="footer_link_list__item"><a href="javascript:;" class="js_footer_more">更多</a></li>
+                    <li class="footer_link_list__item footer_link_list__item--more"><a href="https://www.qcloud.com/" target="_blank" class="js_other_link" data-stat="y_new.footer.other_link">腾讯云</a></li>
+                    <li class="footer_link_list__item footer_link_list__item--more"><a href="http://buluo.qq.com/ " target="_blank" class="js_other_link" data-stat="y_new.footer.other_link">兴趣部落</a></li>
+                    <li class="footer_link_list__item footer_link_list__item--more"><a href="https://ke.qq.com/?from=100 " target="_blank" class="js_other_link" data-stat="y_new.footer.other_link">腾讯课堂</a></li>
+                    <li class="footer_link_list__item footer_link_list__item--more"><a href="http://yunsou.qq.com/" target="_blank" class="js_other_link" data-stat="y_new.footer.other_link">腾讯云搜</a></li>
+                    <li class="footer_link_list__item footer_link_list__item--more"><a href="http://bbs.qcloud.com/ " target="_blank" class="js_other_link" data-stat="y_new.footer.other_link">腾讯云论坛</a></li>
+                    <li class="footer_link_list__item footer_link_list__item--more"><a href="http://www.znds.com/" target="_blank" class="js_other_link" data-stat="y_new.footer.other_link">智能电视网</a></li>
+                    <li class="footer_link_list__item footer_link_list__item--more"><a href="http://www.dangbei.com/ " target="_blank" class="js_other_link" data-stat="y_new.footer.other_link">当贝市场</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer_copyright">
+		
+		<p >
+			<a href="http://www.tencent.com/" rel="nofollow" target="_blank" title="关于腾讯">关于腾讯</a> | 
+			<a href="http://www.tencent.com/index_e.shtml" rel="nofollow" target="_blank" title="About Tencent">About Tencent</a> | 
+			<a href="http://www.qq.com/contract.shtml" rel="nofollow" target="_blank" title="服务条款">服务条款</a> | 
+			<a href="http://y.qq.com/y/static/tips/service_tips.html" rel="nofollow" target="_blank" title="用户服务协议">用户服务协议</a> | 
+			<a href="http://www.qq.com/privacy.htm" rel="nofollow" target="_blank" title="隐私政策">隐私政策</a> | 
+			<a href="http://www.tencentmind.com/" rel="nofollow" target="_blank" title="广告服务">广告服务</a> | 
+			<a href="http://hr.tencent.com/" rel="nofollow" target="_blank" title="腾讯招聘">腾讯招聘</a> | 
+			<a href="http://service.qq.com/" rel="nofollow" target="_blank" title="客服中心">客服中心</a> | 
+			<a href="http://www.qq.com/map/" rel="nofollow" target="_blank" title="网站导航">网站导航</a>
+		</p>
+
+            <p>Copyright &copy; 1998 - <script type="text/javascript">document.write(new Date().getFullYear());</script> Tencent. <a target="_blank" href="http://www.tencent.com/en-us/le/copyrightstatement.shtml" rel="nofollow" title="All Rights Reserved.">All Rights Reserved.</a></p>
+	<p>腾讯公司 <a  target="_blank" href="http://www.tencent.com/zh-cn/le/copyrightstatement.shtml" rel="nofollow" title="版权所有">版权所有</a> <a  target="_blank" href="http://www.tencent.com/law/mo_law.shtml?/law/copyright.htm" rel="nofollow" title="腾讯网络文化经营许可证">腾讯网络文化经营许可证</a></p>
+        </div>
+    </div>
+</div>
+
+<script>SPD.mark(32); </script>
+<script type="text/javascript">require.resourceMap({"res":{"js/v4/OFPLite_selector.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/OFPLite_selector_537ab56.js?max_age=31536000","m":"537ab56"},"js/v4/album.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/album_0891b6a.js?max_age=31536000","m":"0891b6a"},"js/v4/album_lib.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/album_lib_f9ada77.js?max_age=31536000","m":"f9ada77"},"js/v4/company.js":{"deps":["js/common/music.js","js/common/music/lib/base.js"],"url":"//y.gtimg.cn/music/portal/js/v4/company_86de639.js?max_age=31536000","m":"86de639"},"js/v4/index.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/index_baac8c9.js?max_age=31536000","m":"baac8c9"},"js/v4/lyric_upload.js":{"deps":["js/common/music.js","js/common/module/coder.js"],"url":"//y.gtimg.cn/music/portal/js/v4/lyric_upload_cf897b3.js?max_age=31536000","m":"cf897b3"},"js/v4/mv.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/mv_0ec15ee.js?max_age=31536000","m":"0ec15ee"},"js/v4/mvToplist.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/mvToplist_f63a171.js?max_age=31536000","m":"f63a171"},"js/v4/mv_lib.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/mv_lib_7760e78.js?max_age=31536000","m":"7760e78"},"js/v4/mv_upload.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/mv_upload_8745b06.js?max_age=31536000","m":"8745b06"},"js/v4/mymusic.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/mymusic_587e979.js?max_age=31536000","m":"587e979"},"js/v4/mymusic_edit.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/mymusic_edit_3921270.js?max_age=31536000","m":"3921270"},"js/v4/mymusic_friend.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/mymusic_friend_30fc101.js?max_age=31536000","m":"30fc101"},"js/v4/player.js":{"deps":["js/common/music.js","js/common/music/scroller.js","js/common/module/webplayer.js","js/common/module/lrcHandler.js","js/common/module/qrcHandler.js","js/common/music/storage.js"],"url":"//y.gtimg.cn/music/portal/js/v4/player_2e06427.js?max_age=31536000","m":"2e06427"},"js/v4/playlist.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/playlist_b786541.js?max_age=31536000","m":"b786541"},"js/v4/playlist_detail.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/playlist_detail_7a1d9ea.js?max_age=31536000","m":"7a1d9ea"},"js/v4/profile.js":{"deps":["js/common/music.js","js/common/music/storage.js"],"url":"//y.gtimg.cn/music/portal/js/v4/profile_4fc2a20.js?max_age=31536000","m":"4fc2a20"},"js/v4/search.js":{"deps":["js/common/music.js","js/common/music/storage.js"],"url":"//y.gtimg.cn/music/portal/js/v4/search_eac7353.js?max_age=31536000","m":"eac7353"},"js/v4/singer.js":{"deps":["js/common/music.js","js/common/music/lib/base.js"],"url":"//y.gtimg.cn/music/portal/js/v4/singer_97d4703.js?max_age=31536000","m":"97d4703"},"js/v4/singerlist.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/singerlist_87fc8f8.js?max_age=31536000","m":"87fc8f8"},"js/v4/song_detail.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/song_detail_c1b9907.js?max_age=31536000","m":"c1b9907"},"js/v4/toplist.js":{"deps":["js/common/music.js"],"url":"//y.gtimg.cn/music/portal/js/v4/toplist_2f82e6f.js?max_age=31536000","m":"2f82e6f"}},"pkg":{}});</script>
+<script type="text/javascript"> 
+	window.onload = function () {
+		SPD.mark(35);	
+	};
+;(function () {
+	require.async("js/v4/index.js", function( index ){
+		SPD.mark(33);	// JS加载完毕
+		index.init({
+		albumlist : {"all":[{"Falbum_id":"2042813","Falbum_mid":"000aftGF29cEOp","Falbum_name":"弟兄","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"11453","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"004DTQXp0cNXeG","Fsinger_name":"魏晨","count":"66767","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"1884741","Falbum_mid":"0019DvBe4O5c3S","Falbum_name":"Turn Up the Quiet","Fape_type":"1","Farea":"3","Fattribute_3":"1","Flanguage":"5","Fsinger_id1":"9055","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"0012wO6M4P5C2D","Fsinger_name":"Diana Krall","count":"31199","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2044319","Falbum_mid":"0032EblP0FOvUt","Falbum_name":"Collateral Love","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"116322","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003XriCI0OfGYj","Fsinger_name":"黄子韬","count":"30849","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2021852","Falbum_mid":"004FiyJs4QDZOm","Falbum_name":"树人","Fape_type":"0","Farea":"1","Fattribute_3":"0","Flanguage":"0","Fsinger_id1":"58421","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"0045YFv40erzDW","Fsinger_name":"官灵芝","count":"6324","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"1978576","Falbum_mid":"000CgjM51m0KWU","Falbum_name":"Safe Haven","Fape_type":"0","Farea":"3","Fattribute_3":"0","Flanguage":"5","Fsinger_id1":"969320","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"0031tLif4QkGWg","Fsinger_name":"Ruth B","count":"6226","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2008188","Falbum_mid":"001EC8xR43ufjv","Falbum_name":"7 Series","Fape_type":"0","Farea":"3","Fattribute_3":"0","Flanguage":"5","Fsinger_id1":"26665","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"002D71eJ1Yv1lj","Fsinger_name":"KiD Ink","count":"5830","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2042421","Falbum_mid":"003LQiCl0d8GyZ","Falbum_name":"Light My Body Up (Cedric Gervais Remix)","Fape_type":"0","Farea":"3","Fattribute_3":"0","Flanguage":"5","Fsinger_id1":"965","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"000gELB619OfVG","Fsinger_name":"David Guetta","count":"4886","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2044097","Falbum_mid":"002Q6jLt1XfwHP","Falbum_name":"天问","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"31035","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003U6coz1AhN3H","Fsinger_name":"简弘亦","count":"2492","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2042172","Falbum_mid":"0008Mn5h3DggJW","Falbum_name":"义","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"31520","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003Mpbxb4QcwDI","Fsinger_name":"李炜","count":"1798","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2032643","Falbum_mid":"0029DRzN2TyYYN","Falbum_name":"带着骨灰去旅行（KH302 香港 to 札幌）","Fape_type":"0","Farea":"0","Fattribute_3":"0","Flanguage":"1","Fsinger_id1":"11735","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"004LfgzR3pxV4q","Fsinger_name":"洪卓立","count":"188","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2043515","Falbum_mid":"0045Fhxj22sRzU","Falbum_name":"A Book","Fape_type":"1","Farea":"2","Fattribute_3":"1","Flanguage":"9","Fsinger_id1":"23338","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"000I4iye2vfG4O","Fsinger_name":"더필름","count":"0","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2036859","Falbum_mid":"003dZmYW23ltyC","Falbum_name":"Starlight","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"5","Fsinger_id1":"1242116","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"004V3VJI1YfRMO","Fsinger_name":"JIDA","count":"669","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2042236","Falbum_mid":"003K4veB4MNQ4d","Falbum_name":"없네","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"4","Fsinger_id1":"1148444","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"000IZH8Y39HwcK","Fsinger_name":"오왠","count":"204","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2034040","Falbum_mid":"001cZASs2rAdAm","Falbum_name":"烂好人","Fape_type":"0","Farea":"0","Fattribute_3":"0","Flanguage":"0","Fsinger_id1":"4857","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"0022VtZd19rZpi","Fsinger_name":"阿杜","count":"39431","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2036796","Falbum_mid":"0030A6O71XoNW4","Falbum_name":"Amazing","Fape_type":"2","Farea":"0","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"5026","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"002T3P4w2n87aR","Fsinger_name":"林志颖","count":"16952","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2027262","Falbum_mid":"000B816M4Q5fjD","Falbum_name":"パッ","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"3","Fsinger_id1":"13264","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003IyCPY1jTNSS","Fsinger_name":"西野カナ","count":"8606","score":"0","shoufa":0,"xq":"0"}],"cn":[{"Falbum_id":"2045107","Falbum_mid":"002Dh1cM1AfQCY","Falbum_name":"梦想家（央视五四晚会版）","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"92117","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003BLxYj1Smxh4","Fsinger_name":"SNH48","count":"32","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2043176","Falbum_mid":"002Sh3EA1oER7u","Falbum_name":"孤单布娃娃","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"1107586","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003nJVKy2lLFXf","Fsinger_name":"Sunshine","count":"195","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2021852","Falbum_mid":"004FiyJs4QDZOm","Falbum_name":"树人","Fape_type":"0","Farea":"1","Fattribute_3":"0","Flanguage":"0","Fsinger_id1":"58421","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"0045YFv40erzDW","Fsinger_name":"官灵芝","count":"6324","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2044033","Falbum_mid":"000bLEvX4ekWjF","Falbum_name":"后来呢","Fape_type":"0","Farea":"1","Fattribute_3":"0","Flanguage":"0","Fsinger_id1":"156053","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"0010DrXn3I8Xp3","Fsinger_name":"徐浩","count":"290","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2045529","Falbum_mid":"002YEHQA2OkGBI","Falbum_name":"在吗？","Fape_type":"0","Farea":"1","Fattribute_3":"0","Flanguage":"0","Fsinger_id1":"4615","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"002ZOuVm3Qn20Y","Fsinger_name":"李宇春","count":"0","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2042172","Falbum_mid":"0008Mn5h3DggJW","Falbum_name":"义","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"31520","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003Mpbxb4QcwDI","Fsinger_name":"李炜","count":"1798","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2032643","Falbum_mid":"0029DRzN2TyYYN","Falbum_name":"带着骨灰去旅行（KH302 香港 to 札幌）","Fape_type":"0","Farea":"0","Fattribute_3":"0","Flanguage":"1","Fsinger_id1":"11735","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"004LfgzR3pxV4q","Fsinger_name":"洪卓立","count":"188","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2042709","Falbum_mid":"002hmxOs4UuxDy","Falbum_name":"只会更寂寞","Fape_type":"0","Farea":"1","Fattribute_3":"0","Flanguage":"0","Fsinger_id1":"19626","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003HLN6i1em7ll","Fsinger_name":"潘辰","count":"1028","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2044097","Falbum_mid":"002Q6jLt1XfwHP","Falbum_name":"天问","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"31035","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003U6coz1AhN3H","Fsinger_name":"简弘亦","count":"2492","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2045568","Falbum_mid":"001pCyYl3H9VjX","Falbum_name":"金曲捞 第4期","Fape_type":"0","Farea":"1","Fattribute_3":"0","Flanguage":"0","Fsinger_id1":"1457068","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"004NuF1M2hJBsp","Fsinger_name":"金曲捞","count":"0","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2042813","Falbum_mid":"000aftGF29cEOp","Falbum_name":"弟兄","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"11453","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"004DTQXp0cNXeG","Fsinger_name":"魏晨","count":"66767","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2044319","Falbum_mid":"0032EblP0FOvUt","Falbum_name":"Collateral Love","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"116322","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003XriCI0OfGYj","Fsinger_name":"黄子韬","count":"30849","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2040738","Falbum_mid":"000b1nbM0udiPI","Falbum_name":"青春白皮书","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"3954","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"001z2JmX09LLgL","Fsinger_name":"汪苏泷","count":"327169","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2041497","Falbum_mid":"001lCFb229S7PX","Falbum_name":"尖叫之夜","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"1113420","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"002ykHF42AYnsl","Fsinger_name":"许魏洲","count":"439","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2040754","Falbum_mid":"002t8cgE35eykn","Falbum_name":"昨天涯——献给布宜诺斯艾利斯","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"5979","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"000we89k1hzBcA","Fsinger_name":"谭维维","count":"96381","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2036868","Falbum_mid":"003rBSNV26p7lk","Falbum_name":"母亲的微笑","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"1059","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"000lLCqt2TLQKU","Fsinger_name":"何晟铭","count":"3651","score":"0","shoufa":0,"xq":"0"}],"eu":[{"Falbum_id":"2042421","Falbum_mid":"003LQiCl0d8GyZ","Falbum_name":"Light My Body Up (Cedric Gervais Remix)","Fape_type":"0","Farea":"3","Fattribute_3":"0","Flanguage":"5","Fsinger_id1":"965","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"000gELB619OfVG","Fsinger_name":"David Guetta","count":"4886","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2039174","Falbum_mid":"001hFxkT4b7eM9","Falbum_name":"Hunter","Fape_type":"0","Farea":"3","Fattribute_3":"0","Flanguage":"5","Fsinger_id1":"159005","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003EVd0u4D4N6X","Fsinger_name":"Galantis","count":"199","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2008188","Falbum_mid":"001EC8xR43ufjv","Falbum_name":"7 Series","Fape_type":"0","Farea":"3","Fattribute_3":"0","Flanguage":"5","Fsinger_id1":"26665","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"002D71eJ1Yv1lj","Fsinger_name":"KiD Ink","count":"5830","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2045355","Falbum_mid":"003B1wdH1C2TaR","Falbum_name":"Ultralife (Acoustic Version)","Fape_type":"1","Farea":"3","Fattribute_3":"1","Flanguage":"5","Fsinger_id1":"944966","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003C6o6j22VVQS","Fsinger_name":"Oh Wonder","count":"0","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"1884741","Falbum_mid":"0019DvBe4O5c3S","Falbum_name":"Turn Up the Quiet","Fape_type":"1","Farea":"3","Fattribute_3":"1","Flanguage":"5","Fsinger_id1":"9055","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"0012wO6M4P5C2D","Fsinger_name":"Diana Krall","count":"31199","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"1978576","Falbum_mid":"000CgjM51m0KWU","Falbum_name":"Safe Haven","Fape_type":"0","Farea":"3","Fattribute_3":"0","Flanguage":"5","Fsinger_id1":"969320","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"0031tLif4QkGWg","Fsinger_name":"Ruth B","count":"6226","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2045012","Falbum_mid":"002U8FK10yv64r","Falbum_name":"Tears Gone Bad","Fape_type":"0","Farea":"3","Fattribute_3":"0","Flanguage":"5","Fsinger_id1":"169649","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003VVo1I3KIXiZ","Fsinger_name":"Mr. Probz","count":"0","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2043395","Falbum_mid":"001L8ZYo09wTX1","Falbum_name":"Electric Touch (ayokay Remix)","Fape_type":"0","Farea":"3","Fattribute_3":"0","Flanguage":"5","Fsinger_id1":"1104681","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"004EvPww43soY3","Fsinger_name":"A R I Z O N A","count":"222","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2036624","Falbum_mid":"002cUzkl3NQN2G","Falbum_name":"Dear Ana (Acoustic)","Fape_type":"0","Farea":"3","Fattribute_3":"0","Flanguage":"5","Fsinger_id1":"72464","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003OIRxl0v4b4r","Fsinger_name":"Matthew Koma","count":"0","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2031947","Falbum_mid":"000HGAoj3sNMZz","Falbum_name":"No Shape","Fape_type":"2","Farea":"3","Fattribute_3":"1","Flanguage":"5","Fsinger_id1":"40626","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003YF7E83a2dLp","Fsinger_name":"Perfume Genius","count":"30","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2044903","Falbum_mid":"002BjHhm3rao2c","Falbum_name":"Slow Hands","Fape_type":"1","Farea":"3","Fattribute_3":"1","Flanguage":"5","Fsinger_id1":"1248024","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"002nWqnS4aujg8","Fsinger_name":"Niall Horan","count":"0","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2041679","Falbum_mid":"0019Fkgs0fPrS4","Falbum_name":"How Did We (From \"Everything, Everything\" Soundtrack)","Fape_type":"1","Farea":"3","Fattribute_3":"1","Flanguage":"5","Fsinger_id1":"942350","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"002geHNp1t6Dn1","Fsinger_name":"Skylar Stecker","count":"724","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2025859","Falbum_mid":"000fXA5S1fGiY5","Falbum_name":"Something Just Like This (Remix Pack)","Fape_type":"0","Farea":"3","Fattribute_3":"0","Flanguage":"5","Fsinger_id1":"156095","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"004ABIFV1EZUAj","Fsinger_name":"The Chainsmokers","count":"74754","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2032522","Falbum_mid":"000XBBY20LNSu7","Falbum_name":"Bon Appétit","Fape_type":"1","Farea":"3","Fattribute_3":"1","Flanguage":"5","Fsinger_id1":"13157","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"004PTEQR3C16SV","Fsinger_name":"Katy Perry","count":"909908","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2032384","Falbum_mid":"002nUM8H35TqzA","Falbum_name":"No Vacancy","Fape_type":"1","Farea":"3","Fattribute_3":"1","Flanguage":"5","Fsinger_id1":"12211","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"0004LscG3FtUDz","Fsinger_name":"OneRepublic","count":"427757","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2029825","Falbum_mid":"004LiWhx3qYdXI","Falbum_name":"First Time","Fape_type":"0","Farea":"3","Fattribute_3":"0","Flanguage":"5","Fsinger_id1":"942568","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003cWvwH1LNlbN","Fsinger_name":"Kygo","count":"232281","score":"0","shoufa":0,"xq":"0"}],"gt":[{"Falbum_id":"2032643","Falbum_mid":"0029DRzN2TyYYN","Falbum_name":"带着骨灰去旅行（KH302 香港 to 札幌）","Fape_type":"0","Farea":"0","Fattribute_3":"0","Flanguage":"1","Fsinger_id1":"11735","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"004LfgzR3pxV4q","Fsinger_name":"洪卓立","count":"188","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2021852","Falbum_mid":"004FiyJs4QDZOm","Falbum_name":"树人","Fape_type":"0","Farea":"1","Fattribute_3":"0","Flanguage":"0","Fsinger_id1":"58421","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"0045YFv40erzDW","Fsinger_name":"官灵芝","count":"6324","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2034040","Falbum_mid":"001cZASs2rAdAm","Falbum_name":"烂好人","Fape_type":"0","Farea":"0","Fattribute_3":"0","Flanguage":"0","Fsinger_id1":"4857","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"0022VtZd19rZpi","Fsinger_name":"阿杜","count":"39431","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2036796","Falbum_mid":"0030A6O71XoNW4","Falbum_name":"Amazing","Fape_type":"2","Farea":"0","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"5026","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"002T3P4w2n87aR","Fsinger_name":"林志颖","count":"16952","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2032213","Falbum_mid":"002WVHGc3Ayt42","Falbum_name":"我不会撒娇","Fape_type":"0","Farea":"0","Fattribute_3":"0","Flanguage":"1","Fsinger_id1":"4486","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003rYALS0FtpCI","Fsinger_name":"何雁诗","count":"25629","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2032215","Falbum_mid":"004MHkdJ25SWpr","Falbum_name":"手中沙","Fape_type":"0","Farea":"0","Fattribute_3":"0","Flanguage":"1","Fsinger_id1":"1165170","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"004TZBsj4dQmjX","Fsinger_name":"HANA","count":"9259","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2032902","Falbum_mid":"000QLIzC1s4p5r","Falbum_name":"钉子花（EDM Remix）","Fape_type":"1","Farea":"0","Fattribute_3":"1","Flanguage":"2","Fsinger_id1":"75","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"0036ERbx4IUm9V","Fsinger_name":"伍佰","count":"3909","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"666740","Falbum_mid":"000d0Dn50i4DTR","Falbum_name":"Pluto","Fape_type":"2","Farea":"0","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"29258","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"004WoRMx3ESLlV","Fsinger_name":"郑宜农","count":"768","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"1989400","Falbum_mid":"004JJSXF4EF7cg","Falbum_name":"恋爱限定","Fape_type":"2","Farea":"0","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"37142","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"000HIz8d48Ngr3","Fsinger_name":"Twinko","count":"3739","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2021912","Falbum_mid":"002OGESg4GpoAq","Falbum_name":"Shut Up","Fape_type":"0","Farea":"0","Fattribute_3":"0","Flanguage":"1","Fsinger_id1":"164219","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"0025uYT23dPLye","Fsinger_name":"许靖韵","count":"49954","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2017063","Falbum_mid":"002DMYa53B11ei","Falbum_name":"请你爱我","Fape_type":"0","Farea":"0","Fattribute_3":"0","Flanguage":"1","Fsinger_id1":"4856","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"000N3nfJ398H07","Fsinger_name":"蔡卓妍","count":"715860","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2029474","Falbum_mid":"002UV5JC2iTzYE","Falbum_name":"穷得只剩音乐","Fape_type":"2","Farea":"0","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"1158316","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003oiaHA03IoIj","Fsinger_name":"曾咏熙","count":"6425","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2026189","Falbum_mid":"001tYmp73Osqcy","Falbum_name":"我在乎","Fape_type":"2","Farea":"0","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"34332","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"0013pNxz2yMsLp","Fsinger_name":"马克白","count":"500","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2016669","Falbum_mid":"0032G3Cy2rs4Kr","Falbum_name":"他狠过你 (Live version)","Fape_type":"0","Farea":"0","Fattribute_3":"0","Flanguage":"1","Fsinger_id1":"118","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"001uXFgt1kpLyI","Fsinger_name":"容祖儿","count":"128415","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2017290","Falbum_mid":"0029ZlOZ0etoIb","Falbum_name":"我是我","Fape_type":"2","Farea":"0","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"199","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"00493hsy19IASE","Fsinger_name":"蔡淳佳","count":"60724","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2001529","Falbum_mid":"001n5t8y3txB1O","Falbum_name":"浓雾","Fape_type":"0","Farea":"0","Fattribute_3":"0","Flanguage":"1","Fsinger_id1":"1056006","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"001Ntj9n32DZ7u","Fsinger_name":"陈明憙Jocelyn","count":"4614","score":"0","shoufa":0,"xq":"0"}],"j":[{"Falbum_id":"2037899","Falbum_mid":"001p8wVq1JGAlz","Falbum_name":"BEST SELECTION “noir\"","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"3","Fsinger_id1":"33716","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"0039EKtl4ec7wv","Fsinger_name":"Aimer","count":"4003","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"1983927","Falbum_mid":"001BR4SM3qtJ35","Falbum_name":"clockwork planet","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"3","Fsinger_id1":"10671","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"000DQnc22YnDJM","Fsinger_name":"fripSide","count":"4893","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2027262","Falbum_mid":"000B816M4Q5fjD","Falbum_name":"パッ","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"3","Fsinger_id1":"13264","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003IyCPY1jTNSS","Fsinger_name":"西野カナ","count":"8606","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2037135","Falbum_mid":"001JrwkU3TdJy6","Falbum_name":"Girl","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"3","Fsinger_id1":"12677","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"0022PHem4L6smh","Fsinger_name":"秦基博","count":"879","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2032453","Falbum_mid":"004A6rPq2U0Cjw","Falbum_name":"ステラブリーズ (通常盤)","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"3","Fsinger_id1":"46329","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"000KXDyi34HjQo","Fsinger_name":"春奈るな","count":"4666","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2032916","Falbum_mid":"003qgIc00D3Tid","Falbum_name":"Ms.OOJAの、いちばん泣けるドリカム","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"3","Fsinger_id1":"20950","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"002kxvwD1YKbJL","Fsinger_name":"Ms.OOJA","count":"576","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2042876","Falbum_mid":"004FeAH80RuTRZ","Falbum_name":"MUSIC COLOSSEUM","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"3","Fsinger_id1":"31614","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003FS3563UDj3y","Fsinger_name":"Kis-My-Ft2","count":"20","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2039048","Falbum_mid":"00221Y2U1e3Wzc","Falbum_name":"どこかで日は昇る","Fape_type":"1","Farea":"2","Fattribute_3":"1","Flanguage":"3","Fsinger_id1":"950327","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"001ts1ue1BCvPP","Fsinger_name":"Mrs. GREEN APPLE","count":"90","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"1984182","Falbum_mid":"003StTtA1WnSZ4","Falbum_name":"愛を伝えたいだとか","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"3","Fsinger_id1":"952747","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"001YpeWE18tFes","Fsinger_name":"あいみょん","count":"1204","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2036521","Falbum_mid":"001V6k5y1x37j4","Falbum_name":"リボン","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"3","Fsinger_id1":"5573","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"0040uY7d0x59WB","Fsinger_name":"BUMP OF CHICKEN","count":"532","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2036625","Falbum_mid":"002FFSn13tFcCh","Falbum_name":"ピースサイン（TV edit.）","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"3","Fsinger_id1":"49236","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"000LExWa0hMj4m","Fsinger_name":"米津玄師","count":"3730","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2013860","Falbum_mid":"001a1azG0gDLLl","Falbum_name":"One More Night","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"5","Fsinger_id1":"24279","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"002x5R6P1yzMiE","Fsinger_name":"End of the World","count":"32047","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2036692","Falbum_mid":"0008YY2M1LEZhU","Falbum_name":"告白","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"3","Fsinger_id1":"1258182","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"001rT62W1LSs6o","Fsinger_name":"上白石萌音","count":"180","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2032263","Falbum_mid":"003x7xya3TyvEo","Falbum_name":"テレビ朝日系アニメ「タイガーマスクW」オリジナルサウンドトラック","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"9","Fsinger_id1":"28790","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003b7byz4JUrXQ","Fsinger_name":"高梨康治","count":"2783","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"1987246","Falbum_mid":"0042uX294D82fA","Falbum_name":"MOON JELLYFISH","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"3","Fsinger_id1":"41965","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003pp5253P1mUF","Fsinger_name":"Flower","count":"16154","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2029471","Falbum_mid":"0045veSO2S6CyO","Falbum_name":"eYe's","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"3","Fsinger_id1":"1009537","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"002H8Y1e2jcnbv","Fsinger_name":"MYTH & ROID","count":"5116","score":"0","shoufa":0,"xq":"0"}],"k":[{"Falbum_id":"2029931","Falbum_mid":"004byJE516EXmp","Falbum_name":"199X","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"4","Fsinger_id1":"1466483","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003QufJP1UW8Pz","Fsinger_name":"Triple H","count":"137580","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2043515","Falbum_mid":"0045Fhxj22sRzU","Falbum_name":"A Book","Fape_type":"1","Farea":"2","Fattribute_3":"1","Flanguage":"9","Fsinger_id1":"23338","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"000I4iye2vfG4O","Fsinger_name":"더필름","count":"0","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2036859","Falbum_mid":"003dZmYW23ltyC","Falbum_name":"Starlight","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"5","Fsinger_id1":"1242116","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"004V3VJI1YfRMO","Fsinger_name":"JIDA","count":"669","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2042236","Falbum_mid":"003K4veB4MNQ4d","Falbum_name":"없네","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"4","Fsinger_id1":"1148444","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"000IZH8Y39HwcK","Fsinger_name":"오왠","count":"204","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2040333","Falbum_mid":"003b4q9N1Li1aI","Falbum_name":"쉬는날","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"4","Fsinger_id1":"951136","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"00305YaS4VL6SG","Fsinger_name":"서예안","count":"700","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2036719","Falbum_mid":"003Epa9w2HxR8F","Falbum_name":"Lovelyz 2nd Album Repackage [지금, 우리]","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"4","Fsinger_id1":"365461","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"001RQFGi0k8B6b","Fsinger_name":"러블리즈","count":"15733","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2032484","Falbum_mid":"001h1RCO1YNFbN","Falbum_name":"Wonder If","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"4","Fsinger_id1":"25204","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003tgLLP2kqUr2","Fsinger_name":"용준형","count":"27420","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2033084","Falbum_mid":"0041Am4z1yIuNT","Falbum_name":"Easy Love (Chinese Ver.) - 轻易","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"0","Fsinger_id1":"1252566","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"000aCvbR26FuPd","Fsinger_name":"SF9","count":"16447","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2033933","Falbum_mid":"000YmSAP3bFekh","Falbum_name":"How To Be A Happyboy","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"4","Fsinger_id1":"1009889","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003yDOkz2Zot82","Fsinger_name":"SUPERBEE","count":"6664","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2033101","Falbum_mid":"001dpLWk0QdPzz","Falbum_name":"‘를’의 그림자","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"4","Fsinger_id1":"169865","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"000nkZWF1wy06R","Fsinger_name":"를","count":"1387","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2033082","Falbum_mid":"003m49u91NrUlS","Falbum_name":"월급은 통장을 스칠 뿐","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"4","Fsinger_id1":"208216","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"002Dlxpk1sgpLK","Fsinger_name":"스텔라 장","count":"1609","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2033076","Falbum_mid":"003gCLmf0Lryzf","Falbum_name":"Set Me Free","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"4","Fsinger_id1":"25825","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"001TUk0I45mshv","Fsinger_name":"정진운","count":"60","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2032460","Falbum_mid":"002uYKhY2e3Pz7","Falbum_name":"맨투맨 OST Part 2","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"4","Fsinger_id1":"201009","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"002L4lHN1ldlfQ","Fsinger_name":"박보람","count":"24637","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2032629","Falbum_mid":"000wc9el1Q8OTG","Falbum_name":"THE 20TH ANNIVERSARY","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"4","Fsinger_id1":"7979","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"0031xKa50EwkMv","Fsinger_name":"SECHSKIES","count":"98328","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2032459","Falbum_mid":"001J2vCz4ApyqG","Falbum_name":"그댄 달라요","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"4","Fsinger_id1":"17922","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003poIZW4OBVf6","Fsinger_name":"제아","count":"31577","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2032901","Falbum_mid":"0040BvJD1Jnnoa","Falbum_name":"MBC 똑똑키즈스쿨에서 배워요 (깡통 토비네 텃밭)","Fape_type":"0","Farea":"2","Fattribute_3":"0","Flanguage":"4","Fsinger_id1":"1063667","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"0014JnZa0ZBbgm","Fsinger_name":"똑똑 친구들","count":"20","score":"0","shoufa":0,"xq":"0"}],"nd":[{"Falbum_id":"2045529","Falbum_mid":"002YEHQA2OkGBI","Falbum_name":"在吗？","Fape_type":"0","Farea":"1","Fattribute_3":"0","Flanguage":"0","Fsinger_id1":"4615","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"002ZOuVm3Qn20Y","Fsinger_name":"李宇春","count":"0","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2045107","Falbum_mid":"002Dh1cM1AfQCY","Falbum_name":"梦想家（央视五四晚会版）","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"92117","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003BLxYj1Smxh4","Fsinger_name":"SNH48","count":"32","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2042813","Falbum_mid":"000aftGF29cEOp","Falbum_name":"弟兄","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"11453","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"004DTQXp0cNXeG","Fsinger_name":"魏晨","count":"66767","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"1980115","Falbum_mid":"002J5MWG3SA9mA","Falbum_name":"从心出发","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"89698","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003Cn3Yh16q1MO","Fsinger_name":"庄心妍","count":"2110264","score":"10","shoufa":0,"xq":"0"},{"Falbum_id":"2045568","Falbum_mid":"001pCyYl3H9VjX","Falbum_name":"金曲捞 第4期","Fape_type":"0","Farea":"1","Fattribute_3":"0","Flanguage":"0","Fsinger_id1":"1457068","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"004NuF1M2hJBsp","Fsinger_name":"金曲捞","count":"0","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2042172","Falbum_mid":"0008Mn5h3DggJW","Falbum_name":"义","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"31520","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003Mpbxb4QcwDI","Fsinger_name":"李炜","count":"1798","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2044097","Falbum_mid":"002Q6jLt1XfwHP","Falbum_name":"天问","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"31035","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003U6coz1AhN3H","Fsinger_name":"简弘亦","count":"2492","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2044319","Falbum_mid":"0032EblP0FOvUt","Falbum_name":"Collateral Love","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"116322","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003XriCI0OfGYj","Fsinger_name":"黄子韬","count":"30849","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2044033","Falbum_mid":"000bLEvX4ekWjF","Falbum_name":"后来呢","Fape_type":"0","Farea":"1","Fattribute_3":"0","Flanguage":"0","Fsinger_id1":"156053","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"0010DrXn3I8Xp3","Fsinger_name":"徐浩","count":"290","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2042709","Falbum_mid":"002hmxOs4UuxDy","Falbum_name":"只会更寂寞","Fape_type":"0","Farea":"1","Fattribute_3":"0","Flanguage":"0","Fsinger_id1":"19626","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003HLN6i1em7ll","Fsinger_name":"潘辰","count":"1028","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2043176","Falbum_mid":"002Sh3EA1oER7u","Falbum_name":"孤单布娃娃","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"1107586","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"003nJVKy2lLFXf","Fsinger_name":"Sunshine","count":"195","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2040738","Falbum_mid":"000b1nbM0udiPI","Falbum_name":"青春白皮书","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"3954","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"001z2JmX09LLgL","Fsinger_name":"汪苏泷","count":"327169","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2040754","Falbum_mid":"002t8cgE35eykn","Falbum_name":"昨天涯——献给布宜诺斯艾利斯","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"5979","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"000we89k1hzBcA","Fsinger_name":"谭维维","count":"96381","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2041497","Falbum_mid":"001lCFb229S7PX","Falbum_name":"尖叫之夜","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"1113420","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"002ykHF42AYnsl","Fsinger_name":"许魏洲","count":"439","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2036868","Falbum_mid":"003rBSNV26p7lk","Falbum_name":"母亲的微笑","Fape_type":"2","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"1059","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"000lLCqt2TLQKU","Fsinger_name":"何晟铭","count":"3651","score":"0","shoufa":0,"xq":"0"},{"Falbum_id":"2002403","Falbum_mid":"001Xgi710Hgd1y","Falbum_name":"寻","Fape_type":"1","Farea":"1","Fattribute_3":"1","Flanguage":"0","Fsinger_id1":"163550","Fsinger_id2":null,"Fsinger_id3":null,"Fsinger_id4":null,"Fsinger_mid":"002Vcz8F2hpBQj","Fsinger_name":"华晨宇","count":"3679707","score":"0","shoufa":0,"xq":"0"}]}
+		});
+	});
+})(); 
+</script> 
+
+</body>
+</html>
